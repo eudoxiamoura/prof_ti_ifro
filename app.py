@@ -2,42 +2,42 @@ from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
-VAGAS = [{
+PROFESSOR = [{
   'id': 1,
-  'titulo': 'Analista de Dados',
-  'localidade': 'SC, Brasil',
-  'salario': 'R$ 5.000'
+  'nome': 'Lucinano Topolnix',
+  'habilidade': 'Controle absoluto sobre o gelo e metais raros. Consegue congelar até frequências de rádio.',
+  'salario': 'R$ 15.000'
 }, {
   'id': 2,
-  'titulo': 'Desenvolvedor Frontend',
-  'localidade': 'PR, Brasil',
-  'salario': 'R$ 3.000'
+  'nome': 'Euxodia Vottie',
+  'habilidade': 'Telepatia, manipulação de conhecimento, criação de campos de concentração cognitiva — faz qualquer um entender SQL à força.',
+  'salario': 'R$ 30.000'
 }, {
   'id': 3,
-  'titulo': 'Cientista de Dados',
-  'localidade': 'SP, Brasil',
-  'salario': 'R$ 4.000'
+  'nome': 'Andreyron',
+  'habilidade': 'Um ciborgue com consciência humana, mistura de Tony Stark com Visão. Tem um núcleo de energia que dá poderes de controle magnético.',
+  'salario': 'R$ 40.000'
 }, {
   'id': 4,
-  'titulo': 'Desenvolvedor Backend',
-  'localidade': 'SP, Brasil',
-  'salario': 'R$ 5.000'
+  'nome': 'Marcos Thanos',
+  'habilidade': 'Herdeiro distante de Thanos, mas decidiu trilhar o caminho oposto: usa a Joia do Conhecimento (inédita!) para restaurar ordem e sabedoria.',
+  'salario': 'R$ 50.000'
 }, {
   'id': 5,
-  'titulo': 'Estatístico',
-  'localidade': 'RJ, Brasil',
-  'salario': 'R$ 3.400'
+  'nome': 'Vagner Chewbacca',
+  'habilidade': 'Consegue manipular todo tipo de rede — física, lógica ou neural. Derruba firewalls com um gesto e encripta mentes com um piscar de olhos.',
+  'salario': 'R$ 133.400'
 }]
 
 
 @app.route("/")
 def hello():
-  return render_template("home.html", vagas=VAGAS)
+  return render_template("home.html", professor=PROFESSOR)
 
 
-@app.route("/vagas")
-def lista_vagas():
-  return jsonify(VAGAS)
+@app.route("/professor")
+def lista_prof():
+  return jsonify(PROFESSOR)
 
 
 if __name__ == "__main__":
